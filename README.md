@@ -1,5 +1,8 @@
 # Healthcare Backend (Django + DRF + PostgreSQL + JWT)
 
+**Author:** Lokesh
+**Database:** PostgreSQL
+
 ## Setup
 ```bash
 python -m venv venv && source venv/bin/activate     # Windows: venv\Scripts\activate
@@ -53,3 +56,6 @@ curl -X POST localhost:8000/api/mappings/ -H "Authorization: Bearer $TOKEN" -H "
 - Mapping rules: you can only assign doctors to your own patients; duplicate pairs are rejected (DB unique constraint + serializer check).
 - `GET /api/mappings/<patient_id>/` and `DELETE /api/mappings/<id>/` share one URL shape per the spec; the id means patient id for GET and mapping id for DELETE.
 - Secrets/DB credentials come from `.env` (never commit it).
+
+## Testing with Postman
+Import `docs/Healthcare_API.postman_collection.json` into Postman and run the collection.
